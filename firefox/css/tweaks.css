@@ -1,0 +1,230 @@
+/* Hiding Buttons */
+#identity-icon-box {
+  display: none;
+}
+
+#page-action-buttons {
+  display: none;
+}
+
+#tracking-protection-icon-container {
+  display: none;
+}
+
+#identity-permission-box {
+  display: none !important;
+}
+.titlebar-spacer {
+  width: 2px !important;
+}
+
+/* Tab Close Buttons */
+.tabbrowser-tab .close-icon {
+   fill: transparent !important;
+   transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+.tabbrowser-tab:hover .close-icon {
+   fill: #FFFFFF !important;
+   background-color: transparent !important;
+}
+
+/* Reload Button */
+#reload-button {
+   fill: #FFFFFF77 !important;
+   transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#reload-button:hover {
+   fill: #FFFFFFFF !important;
+}
+
+#reload-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Forward Button */
+#forward-button {
+   fill: #FFFFFF88 !important;
+   transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#forward-button:hover {
+  fill: #FFFFFFFF !important;
+  background-color: transparent !important;
+}
+
+#forward-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Back Button */
+#back-button {
+  fill: #FFFFFF77 !important;
+  transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
+#back-button:hover {
+  fill: #FFFFFFFF !important;
+  background-color: transparent !important;
+}
+
+
+#back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Panel Button */
+#PanelUI-menu-button {
+  fill: #FFFFFF77 !important;
+  transition: fill 200ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+#PanelUI-menu-button:hover {
+  fill: #FFFFFFFF !important;
+  background-color: transparent !important;
+}
+
+#PanelUI-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  background-color: transparent !important;
+}
+
+.toolbarbutton-1 {
+	--toolbarbutton-hover-background: none !important;
+}
+
+/* Searchbar */
+#urlbar-background,
+#searchbar {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  background-color: #181825 !important;
+  border-radius: 12px !important;
+}
+
+#urlbar-background,
+#urlbar-input:not([class]) {
+  position: absolute !important;
+  transform: translateX(39%);
+  transition: transform ease-in-out 400ms;
+  padding-top: 4px !important;
+  width: 100% !important;
+  right: 40%;
+  text-align: center !important;
+}
+
+#urlbar-background,
+#urlbar-input:not([class]):focus {
+  transform: translateX(0%);
+  right: 0% !important;
+  text-align: left !important;
+}
+
+#urlbar-input:not([class]).left,
+#urlbar-input:not([class]).left.left #urlbar-input:not([class]):focus {
+  transform: translateX(0%);
+}
+
+#navigator-toolbox, #nav-bar {
+  background-color: #11111B !important;
+}
+
+/* New Tab Button */
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: #34343D !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:hover)
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:hover)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #new-tab-button:not([disabled="true"]):not([checked]):not([open]):not(:active)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms;
+}
+toolbar
+  #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active)
+  > .toolbarbutton-icon,
+toolbar
+  #new-tab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active)
+  > .toolbarbutton-icon {
+  border: 0 !important;
+  border-radius: 14px 14px 14px 14px !important;
+  background-image: none !important;
+  background-color: #34343D !important;
+}
+  
+/* Tabs */
+.tabbrowser-tab .tab-background[selected="true"] {
+  border: 0 !important;
+  border-radius: 10px 10px 10px 10px !important;
+  background-image: none !important;
+  background-color: #FFFFFF21 !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms
+}
+
+.tabbrowser-tab .tab-background:not([selected]) {
+  border: 0 !important;
+  border-radius: 10px 10px 10px 10px !important;
+  background-image: none !important;
+  background-color: #FFFFFF09 !important;
+  transition: background-color cubic-bezier(0.645, 0.045, 0.355, 1) 300ms
+}
+
+#tabbrowser-tabs
+  .tabbrowser-tab:hover
+  > .tab-stack
+  > .tab-background:not([selected="true"]) {
+  border: 0 !important;
+  border-radius: 10px 10px 10px 10px !important;
+  background-image: none !important;
+  background-color: #FFFFFF18 !important;
+}
+
+#tabbrowser-tabs {
+  --tab-loading-fill: transparent !important;
+  margin-left: 2px !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+  max-width: 200px !important;
+}
+/* Megabar */
+#urlbar[breakout][breakout-extend][open] {
+  background-image: url(image/noise-512x512.png) !important;
+  background-color: #1e1e1ebf !important;
+  transition: opacity linear 300ms !important;
+  border-radius: 20px;
+  opacity: 100;
+}
+
+#urlbar[breakout][breakout-extend] {
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+  transition: opacity linear 300ms !important;
+  opacity: 00;
+}
