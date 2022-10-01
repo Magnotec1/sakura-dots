@@ -7,29 +7,20 @@ I probably missed some borrowed configs so if you have a config that I borrowed 
 
 Python reqs:
 --
+
   Cairo
-  
   Python3
-  
   GTK
-  
   Gnome
-  
   pyautogui
-  
   PyGobject
   
 Application reqs:
 --
-  
+
   Jgmenu
-  
   Rofi
-  
   Polybar
-  
   Kitty
-  
   Neofetch
-  
   Firefox
