@@ -22,6 +22,7 @@ Requires:
   PyGobject
   
   Application reqs:
+  
   Jgmenu
   
   Rofi
