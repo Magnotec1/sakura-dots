@@ -13,7 +13,8 @@ Python reqs:
   GTK,
   Gnome,
   pyautogui,
-  PyGobject
+  PyGobject,
+  DBus
   
 Application reqs:
 --
