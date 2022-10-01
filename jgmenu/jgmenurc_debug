@@ -1,0 +1,36 @@
+#                                                                                  ┏━━━━━━┓
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ Vars ┃
+#                                                                                  ┗━━━━━━┛
+
+verbosity = 3
+stay_alive = 0
+position_mode = pointer
+csv_cmd = cat ~/.config/jgmenu/append.csv
+hover_delay = 10
+
+#                                                                                  ┏━━━━━━┓
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ Menu ┃
+#                                                                                  ┗━━━━━━┛
+
+menu_valign = top
+menu_radius = 10
+item_radius = 5
+item_height = 25
+item_margin_x = 3
+item_margin_y = 3
+menu_height_mode = dynamic
+
+#                                                                                  ┏━━━━━━━━┓
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ Colors ┃
+#                                                                                  ┗━━━━━━━━┛
+
+color_menu_bg = #1a1d2b 100
+color_sel_bg = #23273b 100
+color_norm_bg = #1a1d2b 100
+color_sep_fg =23273b 100
+
+#                                                                                  ┏━━━━━━┓
+#━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫ Font ┃
+#                                                                                  ┗━━━━━━┛
+icon_size = 0
+icon_theme = Adwaita

@@ -1,0 +1,23 @@
+⠀Display Settings,gnome-control-center display
+⠀Change Background,gnome-control-center background
+^sep()
+⠀Folders,^checkout(folders)
+⠀Shortcuts,^checkout(shortcuts)
+^sep()
+⠀Exit,^checkout(exit),system-shutdown
+
+^tag(shortcuts)
+⠀Music,flatpak run io.bassi.Amberol
+⠀Browser,google-chrome
+
+^tag(exit)
+⠀Logout,gnome-session-quit
+⠀Suspend,systemctl -i suspend,system-log-out
+⠀Reboot,systemctl -i reboot,system-reboot
+⠀Poweroff,systemctl -i poweroff,system-shutdown
+
+^tag(folders)
+⠀Home,nautilus ~/
+⠀Pictures,nautilus ~/Pictures
+⠀Downloads,nautilus ~/Downloads
+⠀.config,nautilus ~/.config
