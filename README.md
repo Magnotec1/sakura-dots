@@ -10,7 +10,7 @@ Python reqs:
 
   Cairo,
   Python3,
-  GTK,
+  GTK 3.0,
   Gnome,
   pyautogui,
   PyGobject,
