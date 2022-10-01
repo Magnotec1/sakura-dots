@@ -13,7 +13,7 @@ Python reqs:
   GTK,
   Gnome,
   pyautogui,
-  PyGobject,
+  PyGobject
   
 Application reqs:
 --
@@ -23,4 +23,4 @@ Application reqs:
   Polybar,
   Kitty,
   Neofetch,
-  Firefox,
+  Firefox
