@@ -1,0 +1,114 @@
+body {
+  background-color: #11111B;
+  font-family: "Quicksand";
+  display: table-cell;
+  vertical-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+.links {
+  width: 300px;
+  margin-top: -20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 100;
+  align-self: center;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+div.container {
+  text-align: center;
+}
+
+.box-img2 {
+  margin-top: 30vh;
+  border-radius: 10px;
+  width: 620px;
+  height: 250px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFFFFF;
+}
+
+ul {
+  display: inline-block;
+  padding-top: 30px;
+  padding-bottom: 20vh;
+  margin: auto 0 auto -30px;
+  width: 600px;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #FFFFFF;
+  margin-bottom: 2px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+a {
+  color: #FFFFFF;
+  font-size: 28px;
+  opacity: 1;
+  text-decoration: none;
+  transition: opacity linear 200ms;
+}
+
+li {
+  align-self: center;
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#window-clock {
+  margin-top: calc(50px + 28.08vh);
+  border-radius: 10px;
+  width: 620px;
+  height: 200px;
+  font-size: 108px;
+  color: #FFFFFF;
+  position: absolute;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-align: center;
+}
+
+#window-date {
+  margin-top: calc(160px + 28.08vh);
+  border-radius: 10px;
+  width: 620px;
+  height: 120px;
+  font-size: 50px;
+  color: #FFFFFF;
+  position: absolute;
+  font-weight: bold;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-align: center;
+  font-family:'Cantarell Thin';
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 1px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
