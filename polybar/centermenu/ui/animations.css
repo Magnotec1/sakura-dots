@@ -1,0 +1,4 @@
+GtkLabel:insensitive {
+    color: rgba(255,255,255,0);
+    transition: 500ms ease-in-out;
+}

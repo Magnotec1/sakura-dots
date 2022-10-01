@@ -1,0 +1,23 @@
+#!/bin/bash
+touch ~/.config/polybar/storage/toggle1
+
+cont=$(cat ~/.config/polybar/storage/toggle1)
+one='1'
+zero='0'
+
+echo "1" > ~/.config/polybar/storage/toggle1 | sed -e "s// /g" | sed -e "s//\n/g"
+if [[ $cont == $one ]]
+    then 
+        rm -f ~/.config/polybar/storage/toggle1
+        echo "0" > ~/.config/polybar/storage/toggle1
+    else 
+        rm -f ~/.config/polybar/storage/toggle1
+        echo "1" > ~/.config/polybar/storage/toggle1
+fi
+
+if [[ $cont == $zero ]]
+    then
+        pkill -f center.py
+    else 
+        /bin/python3 ~/.config/polybar/centermenu/center.py
+fi
