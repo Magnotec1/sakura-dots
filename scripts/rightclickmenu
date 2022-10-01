@@ -1,0 +1,111 @@
+#!/bin/bash
+rightclickmenu() {
+while :
+do
+root_wid=$(printf 0x%x $(xdotool search --name 'mutter guard window')|head -n1; echo  )
+sel_wid=$(printf 0x%x $(xdotool getmouselocation --shell | grep WINDOW= | sed -e "s/WINDOW=//g");echo)
+up_string_def='up'
+down_string_def='down'
+mid_wired=$(xinput --list | grep "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Mouse" | sed -e 's/\[slave  pointer  (2)]//g' | sed 's/[^0-9]*//g')
+mid_wireless=$(xinput --list | grep "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Dongle" | grep -v "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Dongle Keyboard" | sed -e 's/\[slave  pointer  (2)]//g' | sed 's/[^0-9]*//g')
+click_string_wireless=$(xinput --query-state $mid_wireless | grep 'button\[3]' | sed -e 's/button\[3]=//g' | sed -e 's/	//g'| sed -e 's/ //g')
+
+if xinput --query-state $mid_wired 2>/dev/null >/dev/null;
+    then 
+        click_string_wired=$(xinput --query-state $mid_wired | grep 'button\[3]' | sed -e 's/button\[3]=//g' | sed -e 's/	//g'| sed -e 's/ //g')
+    else 
+        click_string_wired=$up_string_def
+fi
+
+if [ $click_string_wired == $down_string_def ]
+    then
+        click_var=1
+elif [ $click_string_wireless == $down_string_def ]
+    then
+        click_var=1
+    else
+        click_var=0
+fi
+
+if [ $click_var == "1" ]
+    then
+        if [ $sel_wid == $root_wid ]
+            then
+                jgmenu
+        fi
+fi
+
+done
+}
+rightclickmenu_debug() {
+while :
+do
+echo -ne "wired:$click_string_wired wireless:$click_string_wireless both:$click_var / mouseidwired:$mid_wired mouseidwireless:$mid_wireless / selwid:$sel_wid rootwid:$root_wid\\r"
+root_wid=$(printf 0x%x $(xdotool search --name 'mutter guard window')|head -n1; echo  )
+sel_wid=$(printf 0x%x $(xdotool getmouselocation --shell | grep WINDOW= | sed -e "s/WINDOW=//g");echo)
+up_string_def='up'
+down_string_def='down'
+mid_wired=$(xinput --list | grep "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Mouse" | sed -e 's/\[slave  pointer  (2)]//g' | sed 's/[^0-9]*//g')
+mid_wireless=$(xinput --list | grep "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Dongle" | grep -v "Corsair CORSAIR HARPOON RGB WIRELESS Gaming Dongle Keyboard" | sed -e 's/\[slave  pointer  (2)]//g' | sed 's/[^0-9]*//g')
+click_string_wireless=$(xinput --query-state $mid_wireless | grep 'button\[3]' | sed -e 's/button\[3]=//g' | sed -e 's/	//g'| sed -e 's/ //g')
+
+if xinput --query-state $mid_wired 2>/dev/null >/dev/null;
+    then 
+        click_string_wired=$(xinput --query-state $mid_wired | grep 'button\[3]' | sed -e 's/button\[3]=//g' | sed -e 's/	//g'| sed -e 's/ //g')
+    else 
+        click_string_wired=$up_string_def
+fi
+
+if [ $click_string_wired == $down_string_def ]
+    then
+        click_var=1
+elif [ $click_string_wireless == $down_string_def ]
+    then
+        click_var=1
+    else
+        click_var=0
+fi
+
+if [ $click_var == "1" ]
+    then
+        if [ $sel_wid == $root_wid ]
+            then
+                jgmenu
+        fi
+fi
+
+done
+}
+if [ $# -eq 0 ]; then
+    echo "-h or --help to open help menu."
+    exit 1
+fi
+
+while [ "$1" != "" ]; do
+    case $1 in
+    -d | --debug)
+        rightclickmenu_debug
+        ;;
+    -h | --help)
+        echo "
+rightclickmenu 1.0.1
+Usage: rightclickmenu [options]
+
+rightclickmenu is a custom context menu for the desktop which runs on jgmenu.
+
+commands:
+-d or --debug = runs script but outputs debug info constantly
+-h or --help = displays this menu
+-n or --normal = runs script normally
+                                        "
+        ;;
+    -n | --normal)
+        rightclickmenu
+        ;;
+    *)
+        echo "-h or --help to open help menu."
+        exit 1
+        ;;
+    esac
+    shift
+done

@@ -1,0 +1,57 @@
+rc=1
+while [ $rc -eq 1 ]; do
+ans=$(zenity --question --text="Choose a speaker test." \
+    --switch \
+    --extra-button Quit \
+    --extra-button Mono \
+    --extra-button Stereo \
+    --extra-button 5.1 \
+    --extra-button 7.1 \
+     )
+rc=$?
+if [[ $ans = "Mono" ]]
+then
+    echo ""
+    echo -e "\e[1;31mMono Audio Test\e[0m"
+sleep 0.5
+    echo Testing all channels...
+    speaker-test -twav -c6 -l1 -s2 > /dev/null ; echo "Done testing!"
+elif [[ $ans = "Stereo" ]]
+then
+    echo ""
+    echo -e "\e[1;31mStereo Audio Test\e[0m"
+sleep 0.5
+    echo Testing Front Left...
+    speaker-test -twav -c6 -l1 -s1 > /dev/null ; echo Testing Front Right...&& 
+    speaker-test -twav -c6 -l1 -s3 > /dev/null ; echo "Done testing!"
+elif [[ $ans = "5.1" ]]
+then
+    echo ""
+    echo -e "\e[1;31m5.1 Audio Test\e[0m"
+sleep 0.5
+    echo Testing Front Left...
+    speaker-test -twav -c6 -l1 -s1 > /dev/null ; echo Testing Front Right...&& 
+    speaker-test -twav -c6 -l1 -s3 > /dev/null ; echo Testing Rear Left...&& 
+    speaker-test -twav -c6 -l1 -s5 > /dev/null ; echo Testing Rear Right...&& 
+    speaker-test -twav -c6 -l1 -s4 > /dev/null ; echo Testing Front Center...&& 
+    speaker-test -twav -c6 -l1 -s2 > /dev/null ; echo Testing Subwoofer...&& 
+    speaker-test -f200 -l1 -c6 -s6 > /dev/null ; echo "Done testing!"
+elif [[ $ans = "7.1" ]]
+then
+    echo ""
+    echo -e "\e[1;31m7.1 Audio Test\e[0m"
+sleep 0.5
+    echo Testing Front Left...
+    speaker-test -twav -c6 -l1 -s1 > /dev/null ; echo Testing Front Right...&& 
+    speaker-test -twav -c6 -l1 -s3 > /dev/null ; echo Testing Rear Left...&& 
+    speaker-test -twav -c6 -l1 -s5 > /dev/null ; echo Testing Rear Right...&& 
+    speaker-test -twav -c6 -l1 -s4 > /dev/null ; echo Testing Front Center...&& 
+    speaker-test -twav -c6 -l1 -s2 > /dev/null ; echo Testing Side Left...&&
+    speaker-test -twav -l1 -c8 -s7 > /dev/null ; echo Testing Side Right...&&
+    speaker-test -twav -l1 -c8 -s4 > /dev/null ; echo Testing Subwoofer...&&
+    speaker-test -f200 -l1 -c6 -s6 > /dev/null ; echo "Done testing!"
+elif [[ $ans = "Quit" ]]
+then
+     exit
+fi
+done
