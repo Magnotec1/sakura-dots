@@ -41,8 +41,8 @@ get_icon() {
     echo $icon
 }
 
-KEY="177ad3094cf7998ca9b6e25a13f0e97a"
-CITY="6071618"
+KEY=" add key here "
+CITY=" get city id from openweathermap "
 UNITS="metric"
 SYMBOL="°"
 
